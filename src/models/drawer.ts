@@ -1,3 +1,4 @@
+import { Carre } from "./carre";
 import { Cercle } from "./cercle";
 import { FormeGeometrique } from "./forme-géométrique";
 import { Rectangle } from "./rectangle";
@@ -130,6 +131,9 @@ export class Drawer {
                 break;
             case Cercle:
                 this.drawCircle(shape as Cercle);
+                break;
+            case Carre:
+                this.drawRectangle(shape as Rectangle);
                 break;
             // A COMPLETER POUR LE CARRE
             default:

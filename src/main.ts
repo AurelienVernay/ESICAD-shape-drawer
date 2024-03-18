@@ -1,3 +1,4 @@
+import { Carre } from "./models/carre";
 import { Cercle } from "./models/cercle";
 import { Drawer } from "./models/drawer";
 import { FormeGeometrique } from "./models/forme-géométrique";
@@ -170,7 +171,10 @@ form.addEventListener("submit", (event) => {
             cas du carré : A IMPLEMENTER
          */
         case "square":
-            alert("Fonctionnalité non implémentée !");
+            newShape = new Carre(
+                new Point(params.originX as number, params.originY as number),
+                params.length as number,
+            );
             break;
         case null:
         default:
