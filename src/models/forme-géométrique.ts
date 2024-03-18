@@ -1,10 +1,14 @@
 import { Point } from "./point";
 
 /**
- * La classe FormeGeometrique définit des comportements communs à toutes les formes
+ * La classe `FormeGeometrique` définit des comportements communs à toutes les formes
+ *
  * Cette classe est abstraite, c'est-à-dire qu'elle ne peut être instanciée telle quelle
+ *
+ * Cette classe __implémente__  l'interface `hasPerimeter`, c'est-à-dire qu'elle
+ * s'engage à faire respecter son contrat
  */
-export abstract class FormeGeometrique {
+export abstract class FormeGeometrique implements hasPerimeter {
     /**
      * le membre origin définit un point d'origine
      * dans le repère orthonormé à partir duquel
@@ -19,6 +23,8 @@ export abstract class FormeGeometrique {
     constructor(origin: Point) {
         this.origin = origin;
     }
+
+    abstract getPerimetre(): number;
 
     /**
      * renvoit le point d'origine de la forme

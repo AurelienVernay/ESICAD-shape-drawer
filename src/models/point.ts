@@ -27,4 +27,12 @@ export class Point {
     public toString(): string {
         return `x : ${this.x}, y : ${this.y}`;
     }
+
+    /**
+     * Calcule la distance entre 2 points
+     * @returns `d = |2(xA-xB) + 2(yA-yB)|
+     */
+    public distanceFrom(p: Point) {
+        return Math.abs((p.x - this.x) * 2 + (p.y - this.y) * 2);
+    }
 }

@@ -6,6 +6,18 @@ import { Point } from "./point";
  */
 export class Triangle extends FormeGeometrique {
     /**
+     * Implémentation de la méthode getPerimetre pour les objet de la classe `Triangle`,
+     * c'est-à-dire la somme des distances entre ses 3 sommets
+     * @returns le périmètre du triangle
+     */
+    getPerimetre(): number {
+        return (
+            this.getOrigin().distanceFrom(this.getPoint2()) +
+            this.getPoint2().distanceFrom(this.getPoint3()) +
+            this.getPoint3().distanceFrom(this.getOrigin())
+        );
+    }
+    /**
      * représente le second sommet du triangle
      */
     private point2: Point;
